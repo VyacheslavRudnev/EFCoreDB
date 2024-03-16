@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EFCoreDB_HW.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,4 +14,6 @@ public class DataContext : DbContext
     { 
         Database.EnsureCreated();
     }
+
+    public DbSet<User> User { get; set; } = default!;
 }

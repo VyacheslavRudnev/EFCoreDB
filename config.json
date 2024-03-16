@@ -8,6 +8,6 @@
     "**/platforms"
   ],
   "ConnectionStrings": {
-    "Default": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EFCorDb1;Integrated Security=True;"
+    "Default": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EFCoreDB_HW;Integrated Security=True;"
   }
 }
