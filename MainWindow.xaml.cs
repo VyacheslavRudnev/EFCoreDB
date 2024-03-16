@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EFCoreDB_HW.Models;
 
 namespace EFCoreDB_HW;
 
@@ -31,5 +32,15 @@ public partial class MainWindow : Window
             .UseSqlServer(config.GetConnectionString("Default"))
             .Options;
         _dataContext = new DataContext(options);
+
+        _dataContext.User.Add(new User()
+        {
+            Name = "TestName",
+            Login = "UserLog1",
+            Password = "UserPassword"
+        });
+        _dataContext.SaveChanges();
+
+        dataGrid.ItemsSource = _dataContext.User.ToList();
     }
 }
